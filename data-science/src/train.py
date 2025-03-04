@@ -37,10 +37,10 @@ def main(args):
     test_df = pd.read_csv(Path(args.test_data)/"test.csv")
 
     # Split the data into input(X) and output(y)
-    y_train = train_df['Failure']
-    X_train = train_df.drop(columns=['Failure'])
-    y_test = test_df['Failure']
-    X_test = test_df.drop(columns=['Failure'])
+    y_train = train_df['Segment']
+    X_train = train_df.drop(columns=['Segment'])
+    y_test = test_df['Segment']
+    X_test = test_df.drop(columns=['Segment'])
 
     # Initialize and train a Decision Tree Classifier
     model = DecisionTreeClassifier(criterion=args.criterion, max_depth=args.max_depth)
